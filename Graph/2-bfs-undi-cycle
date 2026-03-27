@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution{
+private:
+    bool dfs(int src,int par, vector<int> adj[], vector<int> &vis){
+        vis[src]=1;
+        
+        for(auto it : adj[src]){
+            if(!vis[it]){
+                if(dfs(it,src,adj,vis))return true;
+            }else{
+                if(par!=it)return true;
+            }
+        }
+        return false;
+
+    }
+
+    bool dfsHelper(int src,vector<int> adj[], vector<int> &vis){
+        if(dfs(src,-1,adj,vis))return true;
+        return false;
+    }
+
+
+
+
+
+        bool bfs(int src,vector<int> adj[], vector<int> &vis){
+            queue<pair<int,int>> q;
+            vis[src]=1;
+            q.push({src,-1});
+            while(!q.empty()){
+                int curr = q.front().first;
+                int par = q.front().second;
+
+                q.pop();
+                for(auto it: adj[curr]){
+                    if(!vis[it]){
+                        vis[it]=1;
+                        q.push({it,curr});
+                    }else{
+                        if(it!=par)return true;
+                    }
+
+                }
+
+            }
+            return false;
+        }
+
+
+
+public:
+        bool isCycle(int n, vector<int> adj[]){
+
+            vector<int> vis(n,0);
+
+            for(int i=0; i<n; i++){
+                if(!vis[i]){
+                    // if(bfs(i,adj,vis))return true;
+                    if(dfsHelper(i,adj,vis))return true;
+                }
+            }
+            
+
+            return false;
+        }
+        //tc=o(n+2*E)=>bfs && sc = o(n)
+        //tc = o(n+2*E)=>dfs && sc = o(n)+o(n)
+};

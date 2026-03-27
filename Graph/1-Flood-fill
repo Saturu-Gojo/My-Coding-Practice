@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
     void bfs(int sr, int sc, int color,vector<vector<int>>& image){
