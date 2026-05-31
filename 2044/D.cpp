@@ -29,7 +29,6 @@ void solve(){
     }
     cout<<'\n';
     return;
-
 }
 
 int main(){
