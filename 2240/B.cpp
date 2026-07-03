@@ -1,32 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 using ll = long long;
+const ll mod = 998244353; 
+
+ll power(ll base, ll exp) {
+    ll res = 1;
+    base %= mod;
+    while (exp > 0) {
+        if (exp % 2 == 1) res = (res * base) % mod;
+        base = (base * base) % mod;
+        exp /= 2;
+    }
+    return res;
+}
 
 void solve(){
-    int n,d;
-    cin>>n>>d;
-    string s;
-    cin>>s;
+    ll n,m,r,c;
+    cin>>n>>m>>r>>c;
 
-    int i = 0;
-    bool flag = true;
-    string ans = "";
-    while(i<n){
-        int val = s[i] - '0';
-        if(val<d && flag){
-            ans+=(d+'0');
-            flag =false;
-            continue;
-        }
-        ans+=s[i];
-        i++;
-    }
-
-    if (flag) {
-        ans += (d + '0');
-    }
-    cout<<ans<<'\n';
-    
+    ll total = (n*m);
+    ll    ans = (n*m) - (m-c+1)*(n-r+1);
+    ll res = power(2,ans);
+    cout<<res<<"\n";
     return;
 }
 
