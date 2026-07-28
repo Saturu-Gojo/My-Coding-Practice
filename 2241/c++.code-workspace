@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../backend-ledger"
+		},
+		{
+			"path": "../../Portfolio"
+		},
+		{
+			"path": "../../neuralcity"
+		},
+		{
+			"path": "../../Next-Gen-Ai"
+		},
+		{
+			"path": "../../../../Downloads/bank-transaction-system/bank-system"
+		},
+		{
+			"path": "../../LLM-TrustGuard"
+		},
+		{
+			"path": "../../llm"
+		},
+		{
+			"path": "../../VeriClass"
+		},
+		{
+			"path": "../../mood-music-ai"
+		},
+		{
+			"path": "../../mernstack"
+		}
+	],
+	"settings": {}
+}
