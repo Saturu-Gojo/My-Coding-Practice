@@ -1,1 +1,2 @@
- air.push_back({a,b,p,m});
+freopen("lineup.in","r",stdin);
+    // freopen("lineup.out","w",stdout);
